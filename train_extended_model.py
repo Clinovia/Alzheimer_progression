@@ -2,6 +2,51 @@
 train_extended_model.py
 ADNI Extended Model Training with Missing Value Handling + SHAP
 Properly handles numeric vs categorical feature scaling
+
+================================================================================
+📊 MODEL COMPARISON RESULTS (sorted by ROC-AUC)
+================================================================================
+             Model  Accuracy  ROC-AUC  F1-Score  Sensitivity  Specificity
+      RandomForest    0.8273   0.8771    0.6806       0.7232       0.8628
+          LightGBM    0.8236   0.8678    0.6618       0.6787       0.8730
+           XGBoost    0.7481   0.8577    0.6279       0.8353       0.7184
+  GradientBoosting    0.8114   0.8556    0.6495       0.6870       0.8539
+               SVM    0.6459   0.7707    0.5479       0.8435       0.5784
+LogisticRegression    0.5478   0.6294    0.4270       0.6623       0.5087
+================================================================================
+
+💾 Results saved to: models/progress_advanced_model_comparison.csv
+
+================================================================================
+🏆 BEST MODEL: RandomForest
+================================================================================
+   ROC-AUC: 0.8771
+   Accuracy: 0.8273
+   F1-Score: 0.6806
+   Sensitivity: 0.7232
+   Specificity: 0.8628
+
+💾 Model saved to: models/progress_advanced_RandomForest_best_model.pkl
+
+================================================================================
+🔍 GENERATING SHAP FEATURE IMPORTANCE
+================================================================================
+   Computing SHAP values on 1000 samples...
+   Generating feature importance plot...
+   ✓ Saved: models/shap_advanced_feature_importance_bar.png
+   Generating summary plot...
+No data for colormapping provided via 'c'. Parameters 'vmin', 'vmax' will be ignored
+   ✓ Saved: models/shap_advanced_summary_plot.png
+
+   ✅ SHAP analysis complete
+
+================================================================================
+✅ EXTENDED MODEL TRAINING COMPLETE
+================================================================================
+📊 Models trained: 6
+🏆 Best model: RandomForest (ROC-AUC: 0.8771)
+📁 Final features: 11 columns
+💾 All artifacts saved to: models/
 """
 
 import pandas as pd
